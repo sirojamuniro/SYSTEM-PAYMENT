@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Payment\Payment;
 
 class DeletePaymentJob implements ShouldQueue
 {
@@ -18,11 +19,11 @@ class DeletePaymentJob implements ShouldQueue
      *
      * @return void
      */
-    protected $payment;
 
-    public function __construct($payment)
+
+    public function __construct($ids)
     {
-        $this->payment = $payment;
+        Payment::destroy($ids);
     }
 
     /**
@@ -32,7 +33,6 @@ class DeletePaymentJob implements ShouldQueue
      */
     public function handle()
     {
-        $delete = new PaymentController();
 
     }
 }

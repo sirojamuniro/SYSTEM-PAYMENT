@@ -22,5 +22,5 @@ Route::group([ 'prefix' => 'payments'], function ($router) {
     Route::get('/', [PaymentController::class, 'index']);
     Route::post('create', [PaymentController::class, 'create']);
     Route::put('update/{id}', [PaymentController::class, 'update']);
-    Route::delete('delete/{id}', [PaymentController::class, 'delete']);
+    Route::post('delete', [PaymentController::class, 'delete']);
 });
