@@ -1,3 +1,4 @@
+Cara install dan pemakaian:
 1. clone github
 2. composer install
 3. composer dump-autoload
